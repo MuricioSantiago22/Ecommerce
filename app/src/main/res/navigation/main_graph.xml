@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main_graph"
+    app:startDestination="@id/productsListFragment">
+    <fragment
+        android:id="@+id/productsListFragment"
+        android:name="com.example.e_commerce.ui.productsList.view.ProductsListFragment"
+        android:label="fragment_products_list"
+        tools:layout="@layout/fragment_products_list" >
+        <action
+            android:id="@+id/action_productsListFragment_to_productsListDetailsFragment"
+            app:destination="@id/productsListDetailsFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/orderFragment"
+        android:name="com.example.e_commerce.ui.productOrders.OrderFragment"
+        android:label="fragment_orders_list"
+        tools:layout="@layout/fragment_orders_list" />
+    <fragment
+        android:id="@+id/productCartShoppingFragment"
+        android:name="com.example.e_commerce.ui.productsCartShopping.ProductCartShoppingFragment"
+        android:label="fragment_products_list_cart_shopping"
+        tools:layout="@layout/fragment_products_list_cart_shopping" >
+        <action
+            android:id="@+id/action_productCartShoppingFragment_to_orderFragment"
+            app:destination="@id/orderFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/productsListDetailsFragment"
+        android:name="com.example.e_commerce.ui.productsDetail.ProductsListDetailsFragment"
+        android:label="ProductsListDetailsFragment" >
+        <action
+            android:id="@+id/action_productsListDetailsFragment_to_productCartShoppingFragment"
+            app:destination="@id/productCartShoppingFragment" />
+        <argument
+            android:name="price"
+            app:argType="string" />
+        <argument
+            android:name="title"
+            app:argType="string" />
+        <argument
+            android:name="discount"
+            app:argType="string" />
+        <argument
+            android:name="image_url"
+            app:argType="string" />
+        <argument
+            android:name="description"
+            app:argType="string" />
+    </fragment>
+</navigation>
