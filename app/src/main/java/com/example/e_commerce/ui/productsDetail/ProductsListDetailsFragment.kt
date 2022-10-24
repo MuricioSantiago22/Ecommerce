@@ -13,6 +13,7 @@ class ProductsListDetailsFragment : Fragment(R.layout.fragment_products_list_det
     private lateinit var binding:FragmentProductsListDetailsBinding
     private val args by navArgs<ProductsListDetailsFragmentArgs>()
 
+
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
         binding = FragmentProductsListDetailsBinding.bind(view)
@@ -21,9 +22,19 @@ class ProductsListDetailsFragment : Fragment(R.layout.fragment_products_list_det
         binding.priceTxt.text = "$${args.price}"
         binding.txtTitle.text = args.title
         binding.discountTxt.text = "-$${args.discount}"
-
-
-
+        binding.txtAmount.visibility = View.VISIBLE
+        amount()
 
     }
+    private fun amount(){
+        binding.btnMas.setOnClickListener {
+            binding.txtAmount.setText((binding.txtAmount.text.toString().toInt() + 1).toString())
+        }
+        binding.btnMenos.setOnClickListener {
+            if (binding.txtAmount.text.toString().toInt() > 1){
+                binding.txtAmount.setText((binding.txtAmount.text.toString().toInt() - 1).toString())
+            }
+        }
+    }
 }
+

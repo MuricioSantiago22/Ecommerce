@@ -11,7 +11,12 @@
         tools:layout="@layout/fragment_products_list" >
         <action
             android:id="@+id/action_productsListFragment_to_productsListDetailsFragment"
-            app:destination="@id/productsListDetailsFragment" />
+            app:destination="@id/productsListDetailsFragment"
+            app:enterAnim="@anim/enter_from_right"
+            app:exitAnim="@anim/exit_to_left"
+            app:popEnterAnim="@anim/enter_from_left"
+            app:popExitAnim="@anim/exit_to_right"/>
+
     </fragment>
     <fragment
         android:id="@+id/orderFragment"
@@ -50,4 +55,5 @@
             android:name="description"
             app:argType="string" />
     </fragment>
+
 </navigation>
