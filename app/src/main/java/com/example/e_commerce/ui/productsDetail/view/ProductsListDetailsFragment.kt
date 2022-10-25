@@ -1,4 +1,4 @@
-package com.example.e_commerce.ui.productsDetail
+package com.example.e_commerce.ui.productsDetail.view
 import android.os.Bundle
 import android.view.View
 import androidx.fragment.app.Fragment
@@ -22,7 +22,7 @@ class ProductsListDetailsFragment : Fragment(R.layout.fragment_products_list_det
         binding.priceTxt.text = "$${args.price}"
         binding.txtTitle.text = args.title
         binding.discountTxt.text = "-$${args.discount}"
-        binding.txtAmount.visibility = View.VISIBLE
+        binding.txtAmount.text = "1"
         amount()
 
     }

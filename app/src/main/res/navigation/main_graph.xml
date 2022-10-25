@@ -34,7 +34,7 @@
     </fragment>
     <fragment
         android:id="@+id/productsListDetailsFragment"
-        android:name="com.example.e_commerce.ui.productsDetail.ProductsListDetailsFragment"
+        android:name="com.example.e_commerce.ui.productsDetail.view.ProductsListDetailsFragment"
         android:label="ProductsListDetailsFragment" >
         <action
             android:id="@+id/action_productsListDetailsFragment_to_productCartShoppingFragment"
