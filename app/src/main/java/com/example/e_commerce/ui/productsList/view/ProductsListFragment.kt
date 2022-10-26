@@ -12,8 +12,6 @@ import com.example.e_commerce.core.Resource
 import com.example.e_commerce.data.model.Product
 import com.example.e_commerce.data.repository.ProductsListRepository
 import com.example.e_commerce.databinding.FragmentProductsListBinding
-import com.example.e_commerce.databinding.ItemProductListBinding
-import com.example.e_commerce.ui.productsDetail.ProductsListDetailsFragmentDirections
 import com.example.e_commerce.ui.productsList.adapter.ProductListAdapter
 import com.example.e_commerce.ui.productsList.viewModel.ProductsListViewModel
 import com.example.e_commerce.ui.productsList.viewModel.ProductsListViewModelFactory

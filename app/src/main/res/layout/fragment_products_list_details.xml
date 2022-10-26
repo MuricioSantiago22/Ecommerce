@@ -33,11 +33,11 @@
                     android:id="@+id/app_bar_image"
                     android:layout_width="match_parent"
                     android:layout_height="280dp"
-                    android:layout_margin="15sp"
-                    android:layout_marginStart="15sp"
-                    android:layout_marginLeft="15sp"
-                    android:layout_marginEnd="15sp"
-                    android:layout_marginRight="15sp"
+                    android:layout_margin="15dp"
+                    android:layout_marginStart="15dp"
+                    android:layout_marginLeft="15dp"
+                    android:layout_marginEnd="15dp"
+                    android:layout_marginRight="15dp"
                     android:scaleType="fitCenter"
                     android:src="@null" />
 
