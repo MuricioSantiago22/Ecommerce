@@ -54,6 +54,18 @@
         <argument
             android:name="description"
             app:argType="string" />
+        <action
+            android:id="@+id/action_productsListDetailsFragment_to_fullScreenActivity"
+            app:destination="@id/fullScreenActivity" />
     </fragment>
+    <activity
+        android:id="@+id/fullScreenActivity"
+        android:name="com.example.e_commerce.ui.productsDetail.view.FullScreenActivity"
+        android:label="activity_full_screen"
+        tools:layout="@layout/activity_full_screen" >
+        <argument
+            android:name="image_url"
+            app:argType="string" />
+    </activity>
 
 </navigation>
