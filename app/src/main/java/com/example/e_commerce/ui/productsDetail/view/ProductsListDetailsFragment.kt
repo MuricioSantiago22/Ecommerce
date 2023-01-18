@@ -1,4 +1,6 @@
 package com.example.e_commerce.ui.productsDetail.view
+
+import android.content.Intent
 import android.os.Bundle
 import android.view.View
 import androidx.fragment.app.Fragment
@@ -12,11 +14,12 @@ import com.example.e_commerce.databinding.FragmentProductsListDetailsBinding
 import com.example.e_commerce.ui.productsDetail.viewModel.ProductsDetailsViewModel
 
 
-class ProductsListDetailsFragment : Fragment(R.layout.fragment_products_list_details){
 
-    private lateinit var binding:FragmentProductsListDetailsBinding
+class ProductsListDetailsFragment : Fragment(R.layout.fragment_products_list_details) {
+
+    private lateinit var binding: FragmentProductsListDetailsBinding
     private val args by navArgs<ProductsListDetailsFragmentArgs>()
-    private val viewModel : ProductsDetailsViewModel by viewModels()
+    private val viewModel: ProductsDetailsViewModel by viewModels()
 
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
@@ -30,15 +33,20 @@ class ProductsListDetailsFragment : Fragment(R.layout.fragment_products_list_det
         binding.discountTxt.text = "-$${args.discount}"
         binding.txtAmount.text = "1"
         amount()
-        showFullScreen()
+        binding.appBarImage.setOnClickListener {
+            val intent = Intent(requireContext(),FullScreenActivity::class.java).apply {
+                putExtra("imageUrl", args.imageUrl)
+            }
+            startActivity(intent)
+        }
 
     }
 
-    private fun initObservers(){
+    private fun initObservers() {
         observe(viewModel.getItemCounter()) { binding.txtAmount.text = it.toString() }
     }
 
-    private fun amount(){
+    private fun amount() {
         binding.btnMas.setOnClickListener {
             viewModel.incrementItemCounter()
 
@@ -47,15 +55,9 @@ class ProductsListDetailsFragment : Fragment(R.layout.fragment_products_list_det
             viewModel.decrementItemCounter()
         }
     }
-    private fun showFullScreen(){
-        binding.appBarImage.setOnClickListener {
-            val action = ProductsListDetailsFragmentDirections.actionProductsListDetailsFragmentToFullScreenActivity(
-                args.imageUrl
-            )
-            findNavController().navigate(action)
 
 
-        }
-    }
+
 }
+
 
