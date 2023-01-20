@@ -13,7 +13,7 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.Ecommerce">
         <activity
-            android:name=".FullScreenActivity"
+            android:name=".ui.productsDetail.view.FullScreenActivity"
             android:exported="false">
             <meta-data
                 android:name="android.app.lib_name"
