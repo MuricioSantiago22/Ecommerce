@@ -37,6 +37,7 @@ class ProductsListDetailsFragment : Fragment(R.layout.fragment_products_list_det
                 putExtra("imageUrl", args.imageUrl)
             }
             startActivity(intent)
+
         }
 
     }
